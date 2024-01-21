@@ -23,7 +23,7 @@ export class BodyBuildingComponent {
       title: 'Workout Routine 1',
       description: 'Full-body workout plan for beginners',
       creator: 'FitnessExpert1',
-      imageURL: 'path-to-image1.jpg',
+      imageURL: '',
       type: 'Workout',
       tags: ['Beginner', 'Full-body', 'Fitness']
     };
@@ -33,7 +33,7 @@ export class BodyBuildingComponent {
       title: 'Nutrition Guide 1',
       description: 'Healthy eating habits for muscle building',
       creator: 'Nutritionist1',
-      imageURL: 'path-to-image2.jpg',
+      imageURL: '',
       type: 'Nutrition',
       tags: ['Diet', 'Muscle Building', 'Healthy Eating']
     };
@@ -43,7 +43,7 @@ export class BodyBuildingComponent {
       title: 'Exercise Technique 1',
       description: 'Proper form and technique for key exercises',
       creator: 'PersonalTrainer1',
-      imageURL: 'path-to-image3.jpg',
+      imageURL: '',
       type: 'Exercise',
       tags: ['Form', 'Technique', 'Strength Training']
     };
