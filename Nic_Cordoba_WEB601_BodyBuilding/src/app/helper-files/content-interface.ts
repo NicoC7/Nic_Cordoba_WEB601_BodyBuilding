@@ -8,3 +8,5 @@ interface Content {
     tags?: string[];
 
 }
+
+export { Content };
