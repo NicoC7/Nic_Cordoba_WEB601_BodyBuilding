@@ -1,0 +1,11 @@
+<p>content-list works!</p>
+
+<div *ngFor="let content of contentItems; let first = first" class="content-card" [class.first-card]="first" (click)="displayContentInfo(content)">
+    <header>{{ content.title }}</header>
+    <img [src]="content.image" alt="{{ content.title }}" (click)="displayContentInfo(content)">
+    <p>{{ content.description }}</p>
+    <p>Creator: {{ content.creator }}</p>
+    <p>Type: {{ content.type }}</p>
+    <p>Tags: {{ content.tags.join(', ') }}</p>
+  </div>
+  
