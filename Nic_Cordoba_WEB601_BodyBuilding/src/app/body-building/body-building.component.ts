@@ -13,10 +13,8 @@ export class BodyBuildingComponent {
   @Input() contentList: ContentList;
 
   constructor() {
-    // Create an instance of ContentList
     this.contentList = new ContentList();
 
-    // Add at least 3 valid items using the add function
     const contentItem1: Content = {
       id: 1,
       title: 'Workout Routine 1',
