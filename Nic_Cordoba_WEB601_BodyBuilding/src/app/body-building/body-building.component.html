@@ -1,25 +1,9 @@
 <p>body-building works!</p>
 
-<!-- content-card.component.html -->
-<!-- <div *ngFor="let content of contentList.getContentArray()">
-    <div>
-      <strong>Title:</strong> {{ content.title }}<br>
-      <strong>Description:</strong> {{ content.description }}<br>
-      <strong>Creator:</strong> {{ content.creator }}<br>
-      <strong>Type:</strong> {{ content.type || 'Not specified' }}<br>
-      <img *ngIf="content.imageURL" [src]="content.imageURL" alt="{{ content.title }}" width="100" height="100">
-      <hr>
-    </div>
-</div> -->
-
-
-<div *ngFor="let content of contentList.getContents()">
+<div *ngFor="let contentItem of contentList.content; let i = index">
   <div>
-    <h2>{{ content.title }}</h2>
-    <p>{{ content.description }}</p>
-    <p>Creator: {{ content.creator }}</p>
-    <img *ngIf="content.imageURL" [src]="content.imageURL" alt="Image">
-    <p>Type: {{ content.type }}</p>
+    <h2>Item {{ i + 1}}</h2>
+    <div [innerHTML]="contentList.getContentHtml(i)"></div>
   </div>
 </div>
 

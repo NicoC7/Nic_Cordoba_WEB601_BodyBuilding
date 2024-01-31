@@ -1,45 +1,37 @@
 import { Content } from './content-interface';
 
-class ContentList {
-    private contentArray: Content[];
+export class ContentList {
+    private array: Content[];
   
     constructor() {
-      this.contentArray = [];
+      this.array = [];
     }
   
-    getContentArray(): Content[] {
-      return this.contentArray;
+    get content(): Content[] {
+      return this.array;
     }
   
-    addContent(contentItem: Content): void {
-      this.contentArray.push(contentItem);
+    add(newContent: Content): void {
+      this.array.push(newContent);
     }
   
-    getNumberOfItems(): number {
-      return this.contentArray.length;
+    countItems(): number {
+      return this.array.length;
     }
   
-    getContentHtml(index: number): string {
-      if (index >= 0 && index < this.contentArray.length) {
-        const { title, description, creator, imageURL, type, tags } = this.contentArray[index];
-  
-        const imageTag = imageURL ? `<img src="${imageURL}" alt="${title}" width="100" height="100">` : '';
-        const tagsList = tags ? `<strong>Tags:</strong> ${tags.join(', ')}<br>` : '';
-  
-        return `
-          <div>
-            <strong>Title:</strong> ${title}<br>
-            <strong>Description:</strong> ${description}<br>
-            <strong>Creator:</strong> ${creator}<br>
-            ${tagsList}
-            <strong>Type:</strong> ${type || 'Not specified'}<br>
-            ${imageTag}
-          </div>
-        `;
-      } else {
-        return '<div style="color: red;">Error: Index out of bounds.</div>';
+    getContentHtml(i: number): string {
+      const arrayItem = this.array[i];
+
+      if (!arrayItem) {
+        return "<p>Invalid index</p>";
       }
+
+      let output = `<div>
+                      <h3>${arrayItem.title}</h3>
+                      <p>${arrayItem.description}</p>
+                      <p>${arrayItem.creator}</p>
+                    </div>`;
+
+      return output;
     }
   }
-  
-  export { ContentList };
