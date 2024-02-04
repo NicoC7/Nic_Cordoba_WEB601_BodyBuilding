@@ -1,72 +1,51 @@
-import { Component } from '@angular/core';
+
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { Content } from '../helper-files/content-interface';
 
 @Component({
   selector: 'app-content-list',
   templateUrl: './content-list.component.html',
+  standalone: true,
+  imports: [CommonModule],
   styleUrls: ['./content-list.component.scss']
 })
-export class ContentListComponent {
+export class ContentListComponent implements OnInit {
+  
+  myContentArray: Content[] = [];
 
-  contentList: Content[] = [];
+  contentItem1: Content = {
+    id: 1,
+    title: 'Workout Routine 1',
+    description: 'Full-body workout plan for beginners - muscle and fitness',
+    creator: 'FitnessExpert1',
+    imageURL: 'https://www.muscleandfitness.com/wp-content/uploads/2019/09/Bodybuilder-In-Smokey-Room-Looking-Up-Holding-Dumbbells.jpg?quality=86&strip=all',
+    type: 'Workout',
+    tags: ['Beginner', 'Full-body', 'Fitness']
+  };
 
-  constructor() {
-    const contentItem1: Content = {
-      id: 1,
-      title: 'Bodybuilder Workout Plan',
-      image: 'https://www.example.com/workout-image.jpg',
-      description: 'A comprehensive workout plan for bodybuilders to build muscle and strength.',
-      creator: 'FitnessGuru1',
-      type: 'Workout',
-      tags: ['Bodybuilding', 'Muscle Building', 'Strength Training']
-    };
+  contentItem2: Content = {
+    id: 2,
+    title: 'Nutrition Guide 1',
+    description: 'Healthy eating habits for muscle building - bbc',
+    creator: 'Nutritionist1',
+    imageURL: 'https://ichef.bbci.co.uk/news/640/cpsprodpb/16185/production/_92810509_brittanyrhodes.jpg',
+    type: 'Nutrition',
+    tags: ['Diet', 'Muscle Building', 'Healthy Eating']
+  };
 
-    const contentItem2: Content = {
-      id: 2,
-      title: 'Nutrition Tips for Bodybuilders',
-      image: 'https://www.example.com/nutrition-image.jpg',
-      description: 'Essential nutrition advice for bodybuilders to optimize performance and recovery.',
-      creator: 'NutritionExpert1',
-      type: 'Nutrition',
-      tags: ['Diet', 'Protein', 'Meal Planning']
-    };
+  contentItem3: Content = {
+    id: 3,
+    title: 'Exercise Technique 1',
+    description: 'Proper form and technique for key exercises - USA Today',
+    creator: 'PersonalTrainer1',
+    imageURL: 'https://www.usatoday.com/gcdn/presto/2021/07/21/USAT/dfbd657c-1ef5-4dd9-b355-1619bdc2645f-GettyImages-924491214.jpg?width=700&height=467&fit=crop&format=pjpg&auto=webp',
+    type: 'Exercise',
+    tags: ['Form', 'Technique', 'Strength Training']
+  };
 
-    const contentItem3: Content = {
-      id: 3,
-      title: 'Bodybuilder Interview: Success Stories',
-      image: 'https://www.example.com/interview-image.jpg',
-      description: 'Inspiring interviews with successful bodybuilders sharing their journey and tips.',
-      creator: 'Interviewer1',
-      type: 'Interview',
-      tags: ['Inspiration', 'Success Stories', 'Bodybuilding']
-    };
-
-    const contentItem4: Content = {
-      id: 4,
-      title: 'Recovery Strategies for Bodybuilders',
-      image: 'https://www.example.com/recovery-image.jpg',
-      description: 'Effective recovery techniques for bodybuilders to prevent injuries and enhance performance.',
-      creator: 'RecoveryExpert1',
-      type: 'Recovery',
-      tags: ['Stretching', 'Rest', 'Injury Prevention']
-    };
-
-    const contentItem5: Content = {
-      id: 5,
-      title: 'Essential Supplements for Bodybuilders',
-      image: 'https://www.example.com/supplements-image.jpg',
-      description: 'Guide to essential supplements to support bodybuilders in achieving their fitness goals.',
-      creator: 'SupplementExpert1',
-      type: 'Supplements',
-      tags: ['Protein', 'Vitamins', 'Muscle Support']
-    };
-
-    // Add items to the contentList
-    this.contentList.push(contentItem1);
-    this.contentList.push(contentItem2);
-    this.contentList.push(contentItem3);
-    this.contentList.push(contentItem4);
-    this.contentList.push(contentItem5);
+  ngOnInit() {
+    this.myContentArray = [this.contentItem1, this.contentItem2, this.contentItem3];
   }
 
   displayContentInfo(content: Content) {
