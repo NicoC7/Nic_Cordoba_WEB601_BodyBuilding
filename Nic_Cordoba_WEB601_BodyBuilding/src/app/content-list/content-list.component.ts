@@ -47,8 +47,6 @@ export class ContentListComponent implements OnInit {
   ngOnInit() {
     this.myContentArray = [this.contentItem1, this.contentItem2, this.contentItem3];
   }
-
-  displayContentInfo(content: Content) {
-    console.log('Clicked Content:', content.id, content.title);
-  }
 }
+
+export { Content };

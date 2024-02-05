@@ -1,7 +1,7 @@
 <div *ngFor="let contentItem of myContentArray; let i = index">
   <div>
     <h2>Item {{ contentItem.id }}</h2>
-    <img [src]="contentItem.imageURL" alt="{{ contentItem.title }}" (click)="displayContentInfo(contentItem)">
+    <img [src]="contentItem.imageURL" alt="{{ contentItem.title }}">
     <div>
       <h3>{{ contentItem.title }}</h3>
       <p>{{ contentItem.description }}</p>
@@ -11,3 +11,5 @@
     </div>
   </div>
 </div>
+
+

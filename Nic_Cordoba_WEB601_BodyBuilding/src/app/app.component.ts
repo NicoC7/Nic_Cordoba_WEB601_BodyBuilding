@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ContentListComponent } from './content-list/content-list.component';
+import { CommonModule } from '@angular/common';
+import { Content, ContentListComponent } from './content-list/content-list.component';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+    selector: 'app-root',
+    standalone: true,
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.scss',
+    imports: [RouterOutlet, CommonModule, ContentListComponent]
 })
 export class AppComponent {
   title = 'Nic_Cordoba_WEB601_BodyBuilding';
