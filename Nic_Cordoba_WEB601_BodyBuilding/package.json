@@ -1,6 +1,6 @@
 {
   "name": "nic-cordoba-web601-body-building",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
