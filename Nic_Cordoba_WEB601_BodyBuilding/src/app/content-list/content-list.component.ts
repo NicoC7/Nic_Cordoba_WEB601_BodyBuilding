@@ -30,7 +30,7 @@ export class ContentListComponent implements OnInit {
     description: 'Learn how to fuel your body for maximum muscle growth and recovery with this detailed nutrition guide. Includes meal plans, macronutrient breakdowns, and supplementation advice.',
     creator: 'Nutritionist1',
     imageURL: 'https://i.pinimg.com/originals/17/45/c6/1745c635d4ef2816e6f63b2241fcd73c.jpg',
-    type: 'Nutrition',
+    type: '',
     tags: ['Diet', 'Muscle Building', 'Healthy Eating']
   };
   
@@ -60,7 +60,7 @@ export class ContentListComponent implements OnInit {
     description: 'Learn how incorporating HIIT workouts into your training routine can enhance muscle growth, increase calorie burn, and improve cardiovascular health. Get ready to take your workouts to the next level!',
     creator: 'FitnessExpert1',
     imageURL: 'https://www.zumub.com/blog/wp-content/uploads/2021/11/HIIT-1.jpg',
-    type: 'Workout',
+    type: '',
     tags: ['HIIT', 'Cardio', 'Workout Tips']
   };
   
@@ -83,6 +83,8 @@ export class ContentListComponent implements OnInit {
     type: 'Exercise',
     tags: ['Muscle Hypertrophy', 'Training Techniques', 'Advanced Workouts']
   };
+
+  
   
 
   ngOnInit() {
