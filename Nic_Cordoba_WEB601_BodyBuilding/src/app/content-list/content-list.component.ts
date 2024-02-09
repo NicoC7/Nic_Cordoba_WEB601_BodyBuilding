@@ -1,18 +1,26 @@
-
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Content } from '../helper-files/content-interface';
+import {ContentTypeFilterPipe} from '../content-type-filter.pipe';
+import { FormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-content-list',
   templateUrl: './content-list.component.html',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ContentTypeFilterPipe, FormsModule],
   styleUrls: ['./content-list.component.scss']
 })
 export class ContentListComponent implements OnInit {
-  
+
   myContentArray: Content[] = [];
+  searchTitle: string = '';
+  searchResultMessage: string = '';
+  searchResultMessageColor: string = '';
+  foundContent: Content | null = null;
+  enteredTitle: string = '';
+  searchResult: string = '';
 
   contentItem1: Content = {
     id: 1,
@@ -30,7 +38,7 @@ export class ContentListComponent implements OnInit {
     description: 'Learn how to fuel your body for maximum muscle growth and recovery with this detailed nutrition guide. Includes meal plans, macronutrient breakdowns, and supplementation advice.',
     creator: 'Nutritionist1',
     imageURL: 'https://i.pinimg.com/originals/17/45/c6/1745c635d4ef2816e6f63b2241fcd73c.jpg',
-    type: '',
+    // type: '',
     tags: ['Diet', 'Muscle Building', 'Healthy Eating']
   };
   
@@ -60,7 +68,7 @@ export class ContentListComponent implements OnInit {
     description: 'Learn how incorporating HIIT workouts into your training routine can enhance muscle growth, increase calorie burn, and improve cardiovascular health. Get ready to take your workouts to the next level!',
     creator: 'FitnessExpert1',
     imageURL: 'https://www.zumub.com/blog/wp-content/uploads/2021/11/HIIT-1.jpg',
-    type: '',
+    // type: '',
     tags: ['HIIT', 'Cardio', 'Workout Tips']
   };
   
@@ -90,6 +98,33 @@ export class ContentListComponent implements OnInit {
   ngOnInit() {
     this.myContentArray = [this.contentItem1, this.contentItem2, this.contentItem3, this.contentItem4, this.contentItem5, this.contentItem6, this.contentItem7];
   }
+
+
+
+  searchContent() {
+    const foundContent = this.myContentArray.find(content => content.title === this.searchTitle);
+    if (foundContent) {
+      this.searchResultMessage = `Content with title "${this.searchTitle}" exists!`;
+      this.searchResultMessageColor = 'green';
+    } else {
+      this.searchResultMessage = `Content with title "${this.searchTitle}" does not exist!`;
+      this.searchResultMessageColor = 'red';
+    }
+  }
+
+  searchTitleOfContent() {
+    const foundContent = this.myContentArray.find(content => content.title === this.enteredTitle);
+    if (foundContent) {
+      this.searchResult = `Content item with title '${this.enteredTitle}' exists.`;
+    } else {
+      this.searchResult = `Content item with title '${this.enteredTitle}' does not exist.`;
+    }
+  }
+
+  shouldHighlightContent(content: Content): boolean {
+    return content.title === this.enteredTitle;
+  }  
+
 }
 
 export { Content };

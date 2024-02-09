@@ -1,17 +1,30 @@
-.content-card {
-    border: 1px solid #000;
-    padding: 10px;
-    margin: 10px;
-    cursor: pointer;
-  }
-  
-  .first-card {
-    border-width: 2px;
-  }
-  
-  .content-card img {
-    max-width: 100%;
-    height: auto;
-    margin-top: 10px;
-  }
-  
+.item-card {
+  margin: 1rem 0;
+  padding: 0 1rem;
+  border: 1px solid black;
+}
+
+.workout {
+  background-color: lightgreen;
+}
+
+.nutrition {
+  background-color: lightblue;
+}
+
+.exercise {
+  background-color: lightcoral;
+}
+
+.highlighted {
+  background-color: rgb(128, 0, 117) !important; 
+}
+
+.no-type {
+  background-color: yellow;
+}
+
+.title {
+  background-color: black;
+  color: white;  
+}

@@ -1,15 +1,40 @@
-<div *ngFor="let contentItem of myContentArray; let i = index">
-  <div>
-    <h2>Item {{ contentItem.id }}</h2>
-    <img [src]="contentItem.imageURL" alt="{{ contentItem.title }}">
-    <div>
-      <h3>{{ contentItem.title }}</h3>
-      <p>{{ contentItem.description }}</p>
-      <p>Creator: {{ contentItem.creator }}</p>
-      <p>Type: {{ contentItem.type }}</p>
-      <p>Tags: {{ contentItem.tags}}</p>
-    </div>
+<div>
+  <input type="text" [(ngModel)]="searchTitle" placeholder="Enter content title">
+  <button (click)="searchContent()">Search</button>
+</div>
+<div *ngIf="searchResultMessage" [style.color]="searchResultMessageColor">
+  {{ searchResultMessage }}
+</div>
+
+<h2 class="title">Items with no type</h2>
+<div *ngFor="let item of myContentArray | contentTypeFilter">
+  <div class="item-card no-type">
+    <h2>{{item.title}}</h2>
+    <p>{{item.description}}</p>
   </div>
 </div>
 
+<h2 class="title">Items with type Workout</h2>
+<div  *ngFor="let item of myContentArray | contentTypeFilter: 'Workout'">
+  <div  class="item-card workout">
+    <h2>{{item.title}}</h2>
+    <p>{{item.description}}</p>
+  </div>
+</div>
+
+<h2 class="title">Items with type Nutrition</h2>
+<div *ngFor="let item of myContentArray | contentTypeFilter: 'Nutrition'">
+  <div class="item-card nutrition">
+    <h2>{{item.title}}</h2>
+    <p>{{item.description}}</p>
+  </div>
+</div>
+
+<h2 class="title">Items with type Exercise</h2>
+<div *ngFor="let item of myContentArray | contentTypeFilter: 'Exercise'">
+  <div class="item-card exercise">
+    <h2>{{item.title}}</h2>
+    <p>{{item.description}}</p>
+  </div>
+</div>
 
