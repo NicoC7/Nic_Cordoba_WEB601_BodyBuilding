@@ -122,8 +122,11 @@ export class ContentListComponent implements OnInit {
   }
 
   shouldHighlightContent(content: Content): boolean {
-    return content.title === this.enteredTitle;
-  }  
+    const shouldHighlight = content.title === this.searchTitle && this.searchResultMessageColor === 'green';
+    //console.log('Should highlight:', shouldHighlight);
+    return shouldHighlight;
+  }
+    
 
 }
 

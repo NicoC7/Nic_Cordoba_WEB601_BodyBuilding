@@ -8,7 +8,7 @@
 
 <h2 class="title">Items with no type</h2>
 <div *ngFor="let item of myContentArray | contentTypeFilter">
-  <div class="item-card no-type">
+  <div class="item-card no-type" [class.highlight]="shouldHighlightContent(item)">
     <h2>{{item.title}}</h2>
     <p>{{item.description}}</p>
   </div>
@@ -16,7 +16,7 @@
 
 <h2 class="title">Items with type Workout</h2>
 <div  *ngFor="let item of myContentArray | contentTypeFilter: 'Workout'">
-  <div  class="item-card workout">
+  <div  class="item-card workout" [class.highlight]="shouldHighlightContent(item)">
     <h2>{{item.title}}</h2>
     <p>{{item.description}}</p>
   </div>
@@ -24,7 +24,7 @@
 
 <h2 class="title">Items with type Nutrition</h2>
 <div *ngFor="let item of myContentArray | contentTypeFilter: 'Nutrition'">
-  <div class="item-card nutrition">
+  <div class="item-card nutrition" [class.highlight]="shouldHighlightContent(item)">
     <h2>{{item.title}}</h2>
     <p>{{item.description}}</p>
   </div>
@@ -32,7 +32,7 @@
 
 <h2 class="title">Items with type Exercise</h2>
 <div *ngFor="let item of myContentArray | contentTypeFilter: 'Exercise'">
-  <div class="item-card exercise">
+  <div class="item-card exercise" [class.highlight]="shouldHighlightContent(item)">
     <h2>{{item.title}}</h2>
     <p>{{item.description}}</p>
   </div>
