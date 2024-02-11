@@ -6,59 +6,63 @@
   {{ searchResultMessage }}
 </div>
 
-<h2 appHoverAffect class="title">Items with no type</h2>
-<div appHoverAffect>
-  <div *ngFor="let item of myContentArray | contentTypeFilter">
-    <div class="item-card no-type" [class.highlight]="shouldHighlightContent(item)">
-      <h3>{{item.title}}</h3>
-      <p>{{item.description}}</p>
-      <img *ngIf="item.imageURL; else defaultImage" [src]="item.imageURL" alt="Content Image">
-      <ng-template #defaultImage>
-      <img src="https://www.healthifyme.com/blog/wp-content/uploads/2020/01/gym-diet-cover-1.jpg" alt="Default Image">
-      </ng-template>
-    </div>
+<h2 appHoverAffect typeStyle="underline" class="title">Items with no type</h2>
+<div *ngFor="let item of myContentArray | contentTypeFilter">
+  <div class="item-card no-type" [class.highlight]="shouldHighlightContent(item)">
+    <h3>{{item.title}}</h3>
+    <p>{{item.description}}</p>
+    <img *ngIf="item.imageURL; else defaultImage" [src]="item.imageURL" alt="Content Image">
+    <ng-template #defaultImage>
+    <img src="https://www.healthifyme.com/blog/wp-content/uploads/2020/01/gym-diet-cover-1.jpg" alt="Default Image">
+    </ng-template>
+    <p>
+      <span *ngFor="let tag of item.tags" appHoverAffect tagStyle="bold">{{ tag }} </span>
+    </p>
   </div>
 </div>
 
-<h2 appHoverAffect class="title">Items with type Workout</h2>
-<div appHoverAffect>
-  <div  *ngFor="let item of myContentArray | contentTypeFilter: 'Workout'">
-    <div  class="item-card workout" [class.highlight]="shouldHighlightContent(item)">
-      <h3>{{item.title}}</h3>
-      <p>{{item.description}}</p>
-      <img *ngIf="item.imageURL; else defaultImage" [src]="item.imageURL" alt="Content Image">
-      <ng-template #defaultImage>
-      <img src="https://www.healthifyme.com/blog/wp-content/uploads/2020/01/gym-diet-cover-1.jpg" alt="Default Image">
-      </ng-template>
-    </div>
+<h2 appHoverAffect typeStyle="underline" class="title">Items with type Workout</h2>
+<div  *ngFor="let item of myContentArray | contentTypeFilter: 'Workout'">
+  <div  class="item-card workout" [class.highlight]="shouldHighlightContent(item)">
+    <h3>{{item.title}}</h3>
+    <p>{{item.description}}</p>
+    <img *ngIf="item.imageURL; else defaultImage" [src]="item.imageURL" alt="Content Image">
+    <ng-template #defaultImage>
+    <img src="https://www.healthifyme.com/blog/wp-content/uploads/2020/01/gym-diet-cover-1.jpg" alt="Default Image">
+    </ng-template>
+    <p>
+      <span *ngFor="let tag of item.tags" appHoverAffect tagStyle="bold">{{ tag }} </span>
+    </p>
   </div>
 </div>
 
-<h2 appHoverAffect class="title">Items with type Nutrition</h2>
-<div appHoverAffect>
-  <div *ngFor="let item of myContentArray | contentTypeFilter: 'Nutrition'">
-    <div class="item-card nutrition" [class.highlight]="shouldHighlightContent(item)">
-      <h3>{{item.title}}</h3>
-      <p>{{item.description}}</p>
-      <img *ngIf="item.imageURL; else defaultImage" [src]="item.imageURL" alt="Content Image">
-      <ng-template #defaultImage>
-      <img src="https://www.healthifyme.com/blog/wp-content/uploads/2020/01/gym-diet-cover-1.jpg" alt="Default Image">
-      </ng-template>
-    </div>
-  </div>
+<h2 appHoverAffect typeStyle="underline" class="title">Items with type Nutrition</h2>
+<div *ngFor="let item of myContentArray | contentTypeFilter: 'Nutrition'">
+  <div class="item-card nutrition" [class.highlight]="shouldHighlightContent(item)">
+    <h3>{{item.title}}</h3>
+    <p>{{item.description}}</p>
+    <img *ngIf="item.imageURL; else defaultImage" [src]="item.imageURL" alt="Content Image">
+    <ng-template #defaultImage>
+    <img src="https://www.healthifyme.com/blog/wp-content/uploads/2020/01/gym-diet-cover-1.jpg" alt="Default Image">
+    </ng-template>
+    <p>
+      <span *ngFor="let tag of item.tags" appHoverAffect tagStyle="bold">{{ tag }} </span>
+    </p>
+  </div>  
 </div>
 
-<h2 appHoverAffect class="title">Items with type Exercise</h2>
-<div appHoverAffect>
-  <div *ngFor="let item of myContentArray | contentTypeFilter: 'Exercise'">
-    <div class="item-card exercise" [class.highlight]="shouldHighlightContent(item)">
-      <h3>{{item.title}}</h3>
-      <p>{{item.description}}</p>
-      <img *ngIf="item.imageURL; else defaultImage" [src]="item.imageURL" alt="Content Image">
-      <ng-template #defaultImage>
-      <img src="https://www.healthifyme.com/blog/wp-content/uploads/2020/01/gym-diet-cover-1.jpg" alt="Default Image">
-      </ng-template>
-    </div>
+<h2 appHoverAffect typeStyle="underline" class="title">Items with type Exercise</h2>
+<div *ngFor="let item of myContentArray | contentTypeFilter: 'Exercise'">
+  <div class="item-card exercise" [class.highlight]="shouldHighlightContent(item)">
+    <h3>{{item.title}}</h3>
+    <p>{{item.description}}</p>
+    <img *ngIf="item.imageURL; else defaultImage" [src]="item.imageURL" alt="Content Image">
+    <ng-template #defaultImage>
+    <img src="https://www.healthifyme.com/blog/wp-content/uploads/2020/01/gym-diet-cover-1.jpg" alt="Default Image">
+    </ng-template>
+    <p>
+      <span *ngFor="let tag of item.tags" appHoverAffect tagStyle="bold">{{ tag }} </span>
+    </p>
   </div>
 </div>
 
