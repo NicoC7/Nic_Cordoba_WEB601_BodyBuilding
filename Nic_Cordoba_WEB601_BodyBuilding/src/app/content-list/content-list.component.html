@@ -11,6 +11,10 @@
   <div class="item-card no-type" [class.highlight]="shouldHighlightContent(item)">
     <h2>{{item.title}}</h2>
     <p>{{item.description}}</p>
+    <img *ngIf="item.imageURL; else defaultImage" [src]="item.imageURL" alt="Content Image">
+    <ng-template #defaultImage>
+    <img src="https://www.healthifyme.com/blog/wp-content/uploads/2020/01/gym-diet-cover-1.jpg" alt="Default Image">
+    </ng-template>
   </div>
 </div>
 
@@ -19,6 +23,10 @@
   <div  class="item-card workout" [class.highlight]="shouldHighlightContent(item)">
     <h2>{{item.title}}</h2>
     <p>{{item.description}}</p>
+    <img *ngIf="item.imageURL; else defaultImage" [src]="item.imageURL" alt="Content Image">
+    <ng-template #defaultImage>
+    <img src="https://www.healthifyme.com/blog/wp-content/uploads/2020/01/gym-diet-cover-1.jpg" alt="Default Image">
+    </ng-template>
   </div>
 </div>
 
@@ -27,6 +35,10 @@
   <div class="item-card nutrition" [class.highlight]="shouldHighlightContent(item)">
     <h2>{{item.title}}</h2>
     <p>{{item.description}}</p>
+    <img *ngIf="item.imageURL; else defaultImage" [src]="item.imageURL" alt="Content Image">
+    <ng-template #defaultImage>
+    <img src="https://www.healthifyme.com/blog/wp-content/uploads/2020/01/gym-diet-cover-1.jpg" alt="Default Image">
+    </ng-template>
   </div>
 </div>
 
@@ -35,6 +47,10 @@
   <div class="item-card exercise" [class.highlight]="shouldHighlightContent(item)">
     <h2>{{item.title}}</h2>
     <p>{{item.description}}</p>
+    <img *ngIf="item.imageURL; else defaultImage" [src]="item.imageURL" alt="Content Image">
+    <ng-template #defaultImage>
+    <img src="https://www.healthifyme.com/blog/wp-content/uploads/2020/01/gym-diet-cover-1.jpg" alt="Default Image">
+    </ng-template>
   </div>
 </div>
 
