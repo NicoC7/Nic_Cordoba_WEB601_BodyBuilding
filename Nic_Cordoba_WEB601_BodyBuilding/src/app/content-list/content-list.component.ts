@@ -119,7 +119,7 @@ export class ContentListComponent implements OnInit {
       this.searchResult = `Content item with title '${this.enteredTitle}' exists.`;
     } else {
       this.searchResult = `Content item with title '${this.enteredTitle}' does not exist.`;
-    }
+    }    
   }
 
   shouldHighlightContent(content: Content): boolean {
