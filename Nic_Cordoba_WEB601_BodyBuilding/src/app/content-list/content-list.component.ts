@@ -3,13 +3,14 @@ import { CommonModule } from '@angular/common';
 import { Content } from '../helper-files/content-interface';
 import {ContentTypeFilterPipe} from '../content-type-filter.pipe';
 import { FormsModule } from '@angular/forms';
+import {HoverAffectDirective} from "../hover-affect.directive";
 
 
 @Component({
   selector: 'app-content-list',
   templateUrl: './content-list.component.html',
   standalone: true,
-  imports: [CommonModule, ContentTypeFilterPipe, FormsModule],
+  imports: [CommonModule, ContentTypeFilterPipe, FormsModule, HoverAffectDirective],
   styleUrls: ['./content-list.component.scss']
 })
 export class ContentListComponent implements OnInit {
