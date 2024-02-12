@@ -113,15 +113,6 @@ export class ContentListComponent implements OnInit {
     }
   }
 
-  searchTitleOfContent() {
-    const foundContent = this.myContentArray.find(content => content.title === this.enteredTitle);
-    if (foundContent) {
-      this.searchResult = `Content item with title '${this.enteredTitle}' exists.`;
-    } else {
-      this.searchResult = `Content item with title '${this.enteredTitle}' does not exist.`;
-    }    
-  }
-
   shouldHighlightContent(content: Content): boolean {
     const shouldHighlight = content.title === this.searchTitle && this.searchResultMessageColor === 'green';
     //console.log('Should highlight:', shouldHighlight);
