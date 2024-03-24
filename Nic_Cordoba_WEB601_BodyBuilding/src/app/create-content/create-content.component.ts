@@ -19,7 +19,6 @@ export class CreateContentComponent {
     const tags = this.tagInput.split(',').map(tag => tag.trim());
     this.newContent.tags = tags;
     this.contentAdded.emit(this.newContent);
-    this.newContent = { id: 0, title: '', description: '', creator: '', imageURL: '', tags: [], type: '' };
-    this.tagInput = '';
+    this.tagInput;
   }
 }
