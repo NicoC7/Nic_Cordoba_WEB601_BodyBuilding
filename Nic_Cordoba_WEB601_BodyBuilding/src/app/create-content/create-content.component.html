@@ -1,16 +1,12 @@
-<div>
-    <select [(ngModel)]="newContent.type">
-        <option value="">No Type</option>
-        <option value="Workout">Workout</option>
-        <option value="Exercise">Exercise</option>
-        <option value="Nutrition">Nutrition</option>
-    </select><br>
-    <input type="text" placeholder="Title" [(ngModel)]="newContent.title"><br>
-    <input type="text" placeholder="Description" [(ngModel)]="newContent.description"><br>
-    <input type="text" placeholder="Creator" [(ngModel)]="newContent.creator"><br>
-    <input type="text" placeholder="Image URL" [(ngModel)]="newContent.imageURL"><br>
-    <input type="text" placeholder="Enter tags" [(ngModel)]="tagInput"><br>
+<form #contentForm="ngForm">
+    <input type="number" name="id" placeholder="ID" [(ngModel)]="newContent.id"><br>
+    <input type="text" name="type" placeholder="Type"  [(ngModel)]="newContent.type"><br>
+    <input type="text" name="title" placeholder="Title" [(ngModel)]="newContent.title"><br>
+    <input type="text" name="description" placeholder="Description" [(ngModel)]="newContent.description"><br>
+    <input type="text" name="creator" placeholder="Creator" [(ngModel)]="newContent.creator"><br>
+    <input type="text" name="imageURL" placeholder="Image URL" [(ngModel)]="newContent.imageURL"><br>
+    <input type="text" name="tags" placeholder="Enter tags" [(ngModel)]="newContent.tags"><br>
   
-    <button (click)="addContent()">Add Content</button>
-</div>
-<br>
+    <button (click)="addContent(contentForm)">Add Content</button>
+    <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+</form><br>

@@ -1,3 +1,5 @@
+<app-create-content (contentAdded)="handleContentAdded($event)"></app-create-content>
+
 <div>
   <input type="text" [(ngModel)]="searchTitle" placeholder="Enter content title">
   <button (click)="searchContent()">Search</button>

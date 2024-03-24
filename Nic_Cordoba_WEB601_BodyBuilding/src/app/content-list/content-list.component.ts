@@ -4,14 +4,15 @@ import { Content } from '../helper-files/content-interface';
 import {ContentTypeFilterPipe} from '../content-type-filter.pipe';
 import { FormsModule } from '@angular/forms';
 import {HoverAffectDirective} from "../hover-affect.directive";
+import { CreateContentComponent } from "../create-content/create-content.component";
 
 
 @Component({
-  selector: 'app-content-list',
-  templateUrl: './content-list.component.html',
-  standalone: true,
-  imports: [CommonModule, ContentTypeFilterPipe, FormsModule, HoverAffectDirective],
-  styleUrls: ['./content-list.component.scss']
+    selector: 'app-content-list',
+    templateUrl: './content-list.component.html',
+    standalone: true,
+    styleUrls: ['./content-list.component.scss'],
+    imports: [CommonModule, ContentTypeFilterPipe, FormsModule, HoverAffectDirective, CreateContentComponent]
 })
 export class ContentListComponent implements OnInit {
 
@@ -118,6 +119,11 @@ export class ContentListComponent implements OnInit {
     //console.log('Should highlight:', shouldHighlight);
     return shouldHighlight;
   }
+
+  handleContentAdded(newContent: Content) {
+    this.myContentArray.push({ ...newContent });
+    console.log(' Content was added' , newContent.title);
+}
     
 
 }
