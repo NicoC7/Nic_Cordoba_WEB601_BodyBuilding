@@ -40,7 +40,7 @@ export class ContentListComponent implements OnInit {
     description: 'Learn how to fuel your body for maximum muscle growth and recovery with this detailed nutrition guide. Includes meal plans, macronutrient breakdowns, and supplementation advice.',
     creator: 'Nutritionist1',
     imageURL: 'https://i.pinimg.com/originals/17/45/c6/1745c635d4ef2816e6f63b2241fcd73c.jpg',
-    // type: '',
+    type: '',
     tags: ['Diet', 'Muscle Building', 'Healthy Eating']
   };
   
@@ -70,7 +70,7 @@ export class ContentListComponent implements OnInit {
     description: 'Learn how incorporating HIIT workouts into your training routine can enhance muscle growth, increase calorie burn, and improve cardiovascular health. Get ready to take your workouts to the next level!',
     creator: 'FitnessExpert1',
     imageURL: 'https://www.zumub.com/blog/wp-content/uploads/2021/11/HIIT-1.jpg',
-    // type: '',
+    type: '',
     tags: ['HIIT', 'Cardio', 'Workout Tips']
   };
   
@@ -121,9 +121,11 @@ export class ContentListComponent implements OnInit {
   }
 
   handleContentAdded(newContent: Content) {
-    this.myContentArray.push({ ...newContent });
-    console.log(' Content was added' , newContent.title);
-}
+    // this.myContentArray.push({ ...newContent }); 
+    this.myContentArray = [...this.myContentArray, newContent];
+    console.log('Content was added', newContent.title);
+    console.log('Updated Array:', this.myContentArray);
+ }
     
 
 }

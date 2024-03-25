@@ -9,8 +9,10 @@ export class ContentTypeFilterPipe implements PipeTransform {
 
   transform(contents: Content[], typeFilter?: string): Content[] {
     if (!typeFilter) {
+
       return contents.filter((content) => !content.type);
     }
+
 
     return contents.filter((content) => content.type === typeFilter);
   }
