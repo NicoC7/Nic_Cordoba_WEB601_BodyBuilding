@@ -9,8 +9,8 @@
 </div>
 
 <h2 appHoverAffect typeStyle="underline" class="title">Items with no type</h2>
-<div *ngFor="let item of myContentArray | contentTypeFilter">
-  <div cardStyle="border" class="item-card no-type" [class.highlight]="shouldHighlightContent(item)">
+<div *ngFor="let item of myContentArray | contentTypeFilter: 'no type'">
+  <div *ngIf="!featuredContent || featuredContent.type !== 'no type'" cardStyle="border" class="item-card no-type box-shadowed" [class.highlight]="shouldHighlightContent(item)">
     <h3>{{item.title}}</h3>
     <p>{{item.description}}</p>
     <img *ngIf="item.imageURL; else defaultImage" [src]="item.imageURL" alt="Content Image">
@@ -25,7 +25,7 @@
 
 <h2 appHoverAffect typeStyle="underline" class="title">Items with type Workout</h2>
 <div  *ngFor="let item of myContentArray | contentTypeFilter: 'Workout'">
-  <div cardStyle="border" class="item-card workout" [class.highlight]="shouldHighlightContent(item)">
+  <div *ngIf="!featuredContent || featuredContent.type !== 'workout'" cardStyle="border" class="item-card workout box-shadowed" [class.highlight]="shouldHighlightContent(item)">
     <h3>{{item.title}}</h3>
     <p>{{item.description}}</p>
     <img *ngIf="item.imageURL; else defaultImage" [src]="item.imageURL" alt="Content Image">
@@ -40,7 +40,7 @@
 
 <h2 appHoverAffect typeStyle="underline" class="title">Items with type Nutrition</h2>
 <div *ngFor="let item of myContentArray | contentTypeFilter: 'Nutrition'">
-  <div cardStyle="border" class="item-card nutrition" [class.highlight]="shouldHighlightContent(item)">
+  <div *ngIf="!featuredContent || featuredContent.type !== 'nutrition'" cardStyle="border" class="item-card nutrition box-shadowed" [class.highlight]="shouldHighlightContent(item)">
     <h3>{{item.title}}</h3>
     <p>{{item.description}}</p>
     <img *ngIf="item.imageURL; else defaultImage" [src]="item.imageURL" alt="Content Image">
@@ -55,7 +55,7 @@
 
 <h2 appHoverAffect typeStyle="underline" class="title">Items with type Exercise</h2>
 <div *ngFor="let item of myContentArray | contentTypeFilter: 'Exercise'">
-  <div cardStyle="border" class="item-card exercise" [class.highlight]="shouldHighlightContent(item)">
+  <div *ngIf="!featuredContent || featuredContent.type !== 'exercise'" cardStyle="border" class="item-card exercise box-shadowed" [class.highlight]="shouldHighlightContent(item)">
     <h3>{{item.title}}</h3>
     <p>{{item.description}}</p>
     <img *ngIf="item.imageURL; else defaultImage" [src]="item.imageURL" alt="Content Image">

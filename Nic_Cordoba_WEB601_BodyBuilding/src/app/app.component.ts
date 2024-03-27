@@ -4,13 +4,14 @@ import { CommonModule } from '@angular/common';
 import { ContentListComponent } from './content-list/content-list.component';
 import {HoverAffectDirective} from "./hover-affect.directive";
 import {CreateContentComponent} from "./create-content/create-content.component";
+import { AppMessagesComponent } from "./app-messages/app-messages.component";
 
 @Component({
     selector: 'app-root',
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss',
-    imports: [RouterOutlet, CommonModule, ContentListComponent, HoverAffectDirective, CreateContentComponent]
+    imports: [RouterOutlet, CommonModule, ContentListComponent, HoverAffectDirective, CreateContentComponent, AppMessagesComponent]
 })
 export class AppComponent {
   title = 'Nic_Cordoba_WEB601_BodyBuilding';
